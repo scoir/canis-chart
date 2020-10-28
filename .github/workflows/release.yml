@@ -56,6 +56,6 @@ jobs:
       - uses: actions/checkout@v1
       - uses: helm/chart-releaser-action@v1.0.0
         with:
-          charts_dir: /canis-chart-test
+          charts_dir: canis-chart-test
         env:
           CR_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
