@@ -34,4 +34,3 @@ jobs:
         context: .
         file: ./docker/Dockerfile
         platforms: linux/amd64
-        repository: canislabs/canis-test
