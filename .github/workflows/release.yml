@@ -54,8 +54,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: J12934/helm-gh-pages-action@master
+      - uses: helm/chart-releaser-action@v1.0.0
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: main
-          charts-folder: canis-chart-test
+          charts_dir: /canis-chart-test
+        env:
+          CR_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
