@@ -34,6 +34,4 @@ jobs:
         context: .
         file: ./docker/Dockerfile
         platforms: linux/amd64
-        push: true
         repository: canislabs/canis-test
-        tag_with_ref: true
