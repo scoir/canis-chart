@@ -3,7 +3,7 @@ on:
   release:
     types: [published]
 jobs:
-  publish:
+  publish-docker-image:
     name: Build Docker Image
     runs-on: ubuntu-18.04
     container: scoir/canis-build:latest
@@ -48,3 +48,14 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: ${{ steps.prep.outputs.tags }}
+
+  publish-helm-chart:
+    name: Publish Helm Chart
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: J12934/helm-gh-pages-action@master
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: main
+          charts-folder: canis-chart-test

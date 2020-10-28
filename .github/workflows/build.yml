@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  publish:
+  build:
     name: Build Docker Image
     runs-on: ubuntu-18.04
     container: scoir/canis-build:latest
