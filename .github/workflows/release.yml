@@ -63,7 +63,7 @@ jobs:
         tags: ${{ steps.prep.outputs.tags }}
 
     - name: Helm package
-    - run: |
+      run: |
         helm package -u -d docs/ --app-version ${{ steps.prep.outputs.version }} --version ${{ steps.prep.outputs.version }} canis-chart-test/
 
     - name: Upload helm package to release
